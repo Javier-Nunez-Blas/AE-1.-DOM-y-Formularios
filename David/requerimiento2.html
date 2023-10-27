@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<htmal>
+    <head>
+        <script>
+            function hacerPedido(){
+
+                var nombre=document.getElementById("nombre").value;
+                if(nombre==""){
+                    alert("introduce nombre");
+                }else{
+                    var direccion=document.getElementById("direccion").value;
+                    if(direccion==""){
+                        alert("introduce direccion");
+                    }else{
+                        var telefono=document.getElementById("telefono").value;
+                        if(telefono==""){
+                            alert("intriduce telefono");
+                        }else{
+                            var email=document.getElementById("email").value;
+                            if(email==""){
+                                alert("introduce email");
+                            }else{
+                                const tamano = document.querySelector('input[name="tamano"]:checked');
+                                if (tamano==null){
+                                    alert("introduce tamaño");
+                                }else{
+                                    const ingredientes = document.querySelectorAll('input[name="ingredientes"]:checked');
+                                    if (ingredientes==null || ingredientes.length <1){
+                                        alert("introduce al menos un ingredientes");
+                                    }else{
+                                        //Todos los campos estan validados por lo tanto puedo calcular el precio
+                                        var precio=0;
+                                        const tamano = document.querySelector('input[name="tamano"]:checked');
+                                        const ingredientes = document.querySelectorAll('input[name="ingredientes"]:checked');
+                                        if(tamano.value=="pequena"){
+                                            precio=5;
+                                        }else{
+                                            if(tamano.value=="mediana"){
+                                                precio=10;
+                                            }else{
+                                                if(tamano.value=="grande"){
+                                                    precio=15;
+                                                }
+                                            }    
+                                        }
+
+
+                                        if(ingredientes.length>=4){
+                                            precio=precio + 4;
+                                        }else{
+                                            if(ingredientes.length>=3){
+                                                precio=precio +3;
+                                            }else{
+                                                if(ingredientes.length>=2){
+                                                    precio=precio +2;
+                                                }else{
+                                                    if(ingredientes.length>=1){
+                                                        precio=precio +1;
+                                                    }
+                                                
+                                                }
+                                            }
+                                            
+                                        
+                                        }
+
+                                        document.getElementById("precio").value=precio;
+
+
+
+                                    
+                                    }
+
+                                }
+                                
+                            }
+                        }
+
+                    }
+                    
+                }
+
+            }
+
+        </script>
+    </head>
+    <body>
+        <h1>Pizzeria</h1>
+        <img src="img/pizzeria.jpeg"/>
+        
+        <form id="formulario">
+            <h2>Informacion de clientes</h2>
+            <input type ="text" id="nombre" placeholder="nombre"/>
+            <input type ="text" id="direccion" placeholder="direccion"/>
+            <input type="text" id="telefono" placeholder="telefono"/>
+
+            <h2>Tamaño pizza</h2>
+            <input type="text" id="email" placeholder="email"/>
+            pequeña
+            <input type="radio" id="pequena" value="pequena" name="tamano"/>
+            mediana
+            <input type="radio" id="mediana" value="mediana" name="tamano"/>
+            grande
+            <input type="radio" id="grande" value="grande" name="tamano"/>
+
+            <h2>Ingredientes</h2>
+            aceitunas
+            <input type="checkBox" id="aceitunas" value="aceitunas" name="ingredientes"/>
+            atun
+            <input type="checkBox" id="atun" value="atun" name="ingredientes"/>
+            bacon
+            <input type="checkBox" id="bacon" value="bacon" name="ingredientes"/>
+            peperoni
+            <input type="checkBox" id="peperoni" value="peperoni" name="ingredientes"/>
+
+            <br>
+            <br>
+            <input type="Button" value="preparar pedido" onclick="hacerPedido()"/>
+
+            <h2>Importe</h2>
+            <input type="text" id="precio" value="precio"/>
+            
+        </form>
+       
+    </body>
+</htmal>

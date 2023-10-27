@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function cargarCamposDeTexto(formulario){ 
+            
+            var dni = document.createElement("input");
+            dni.setAttribute("type","text");
+            dni.setAttribute("name","dni");
+            dni.placeholder="DNI";
+            dni.id="dni";
+
+            var nombre= document.createElement("input");
+            nombre.setAttribute("type","text");
+            nombre.setAttribute("name","nombre");
+            nombre.placeholder="Nombre";
+            nombre.id="nombre";
+
+            var apellidos= document.createElement("input");
+            apellidos.setAttribute("type","text");
+            apellidos.setAttribute("name","apellidos");
+            apellidos.placeholder="Apellidos";
+            apellidos.id="apellidos";
+
+            var direccion= document.createElement("input");
+            direccion.setAttribute("type","text");
+            direccion.setAttribute("name","direccion");
+            direccion.placeholder="Direccion";
+            direccion.id="direccion";
+
+            var telefono= document.createElement("input");
+            telefono.setAttribute("type","text");
+            telefono.setAttribute("name","telefono");
+            telefono.placeholder="Telefono";
+            telefono.id="telefono";
+
+            formulario.appendChild(dni);
+            formulario.appendChild(nombre);
+            formulario.appendChild(apellidos);
+            formulario.appendChild(direccion);
+            formulario.appendChild(telefono);
+            
+            //se utiliza para obtener una referencia al elemento HTML que tiene el atributo id establecido en "contenedor1"
+            var contenedor1= document.getElementById("contenedor_original");
+            contenedor1.appendChild(formulario);
+        } 
+        function crearRadioButton(formulario){
+
+            var label1=document.createElement("label");
+            var radioButton1=document.createElement("input");
+            label1.textContent="Accion";
+            radioButton1.setAttribute("type", "radio");
+            radioButton1.setAttribute("name","genero");
+            radioButton1.setAttribute("valor","accion");
+            label1.appendChild(radioButton1);
+            formulario.appendChild(label1);
+            
+
+            var label2=document.createElement("label");
+            var radiobutton2=document.createElement("input");
+            label2.textContent="Terror";
+            radiobutton2.setAttribute("type","radio");
+            radiobutton2.setAttribute("name","genero")
+            radiobutton2.setAttribute("valor","terror");
+            label2.appendChild(radiobutton2);
+            formulario.appendChild(label2);
+            
+
+            var label3=document.createElement("label");
+            var radioButton3 =document.createElement("input");
+            label3.textContent="Suspense";
+            radioButton3.setAttribute("type","radio");
+            radioButton3.setAttribute("name","genero");
+            radioButton3.setAttribute("value","suspense");
+            label3.appendChild(radioButton3);
+            formulario.appendChild(label3);
+
+            var label4=document.createElement("label");
+            var radioButton4 =document.createElement("input");
+            label4.textContent="Aventuras";
+            radioButton4.setAttribute("type","radio");
+            radioButton4.setAttribute("name","genero");
+            radioButton4.setAttribute("value","aventuras");
+            label4.appendChild(radioButton4);
+            formulario.appendChild(label4);
+
+
+            var label5=document.createElement("label");
+            var radioButton5=document.createElement("input");
+            label5.textContent="Todos los publicos";
+            radioButton5.setAttribute("type", "radio");
+            radioButton5.setAttribute("name","edad");
+            radioButton5.setAttribute("valor","todos");
+            label5.appendChild(radioButton5);
+            formulario.appendChild(label5);
+            
+
+            var label6=document.createElement("label");
+            var radiobutton6=document.createElement("input");
+            label6.textContent="6 Años";
+            radiobutton6.setAttribute("type","radio");
+            radiobutton6.setAttribute("name","edad")
+            radiobutton6.setAttribute("valor","seis");
+            label6.appendChild(radiobutton6);
+            formulario.appendChild(label6);
+            
+
+            var label7=document.createElement("label");
+            var radioButton7 =document.createElement("input");
+            label7.textContent="12 Años";
+            radioButton7.setAttribute("type","radio");
+            radioButton7.setAttribute("name","edad");
+            radioButton7.setAttribute("value","12");
+            label7.appendChild(radioButton7);
+            formulario.appendChild(label7);
+
+            var label8=document.createElement("label");
+            var radioButton8 =document.createElement("input");
+            label8.textContent="18 Años";
+            radioButton8.setAttribute("type","radio");
+            radioButton8.setAttribute("name","edad");
+            radioButton8.setAttribute("value","18");
+            label8.appendChild(radioButton8);
+            formulario.appendChild(label8);
+                   
+            var contenedor1=document.getElementById("contenedor_original");
+            contenedor1.appendChild(formulario);
+
+        }  
+
+        function cargarCheckBox(formulario){
+
+            var label1=document.createElement("label");
+            var checkBox1=document.createElement("input");
+            label1.textContent="España";
+
+            checkBox1.setAttribute("type","checkbox");
+            checkBox1.setAttribute("name","pais");
+            label1.appendChild(checkBox1);
+            formulario.appendChild(label1);
+            
+            var label2=document.createElement("label");
+            var checkBox2=document.createElement("input")
+            label2.textContent="Estados Unidos";
+
+            checkBox2.setAttribute("type","checkBox");
+            checkBox2.setAttribute("name","pais");
+            label2.appendChild(checkBox2);
+            formulario.appendChild(label2);
+            
+            var label3=document.createElement("label");
+            var checkBox3=document.createElement("input");
+            label3.textContent="Francia";
+
+            checkBox3.setAttribute("type","checkBox");
+            checkBox3.setAttribute("naem","pais"),
+            label3.appendChild(checkBox3);
+            formulario.appendChild(label3);
+
+            var label4=document.createElement("label");
+            var checkBox4=document.createElement("input");
+            label4.textContent="Alemania";
+
+            checkBox4.setAttribute("type","checkBox");
+            checkBox4.setAttribute("name","pais");
+            label4.appendChild(checkBox4);
+            formulario.appendChild(label4);
+
+            var contenedor1=document.getElementById("contenedor_original");
+            contenedor1.appendChild(formulario);
+        }
+        function cargarImagenes(){
+
+            var contenedor1=document.getElementById("contenedor_original");
+
+            var imagen=document.createElement("img");
+            imagen.src="img/hook.jpg";
+            imagen.width=200;
+            imagen.height=200;
+            contenedor1.appendChild(imagen);
+
+            var imagen2=document.createElement("img");
+            imagen2.src="img/hook2.png";
+            imagen2.wight=100;
+            imagen2.heigth=100;
+            contenedor1.appendChild(imagen2);
+        }
+
+        function crearCampoSelect(formulario){
+
+            var select=document.createElement("select");
+            var option1=document.createElement("option");
+            
+            option1.value="idioma";
+            option1.text="ingles";
+            select.appendChild(option1);
+          
+            var option2=document.createElement("option");
+
+            option2.value="idioma";
+            option2.text="espanol";
+            select.appendChild(option2);
+            
+            var option3=document.createElement("option");
+
+            option3.value="idioma";
+            option3.text="aleman";
+            select.appendChild(option3);
+            formulario.appendChild(select);
+
+            var contenedor1=document.getElementById("contenedor_original");
+            contenedor1.appendChild(formulario);
+
+        }
+        function crearTextArea(formulario){
+
+            var textArea=document.createElement("textarea");
+
+            textArea.name="comentarios";
+            textArea.placeholder="escribir aqui";
+            formulario.appendChild(textArea);
+
+            var contenedor1=document.getElementById("contenedor_original");
+            contenedor1.appendChild(formulario);
+        }
+
+
+    </script>
+    </head>
+    <body>
+        <div id="contenedor_original"></div>
+    </body>
+    <script>
+        var formulario = document.createElement("form");
+        cargarCamposDeTexto(formulario);
+        crearRadioButton(formulario);
+        cargarCheckBox(formulario);
+        cargarImagenes();//no hace falta meterle formulario por que es una imagen.
+        crearCampoSelect(formulario);
+        crearTextArea(formulario);
+    </script>
+
+</html>

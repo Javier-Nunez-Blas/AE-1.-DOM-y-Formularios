@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script type="text/javascript" 
+			src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+
+    <script type="application/javaScript">
+        function cargar() {
+
+            //creamos un contenedor div
+            const divContainer = document.createElement("div");
+            divContainer.id = "div1"
+
+            //añadimos el contendor div al árbol DOM en el body
+            document.body.appenChild(divContainer);
+
+        }
+    </script>
+    <script>
+        //esto es una prueba....... dejar o borrar? comó plasmar??
+        document.write('<h1>La hora es: ' + retornarFecha() + '</h1>');
+		document.write('<br/>');
+    </script>
+</head>
+<body>
+    <h1>REGISTRO</h1>
+    <h2>Bienvenido a nuestro portal</h2>
+    <p>Para darte de alta como jugado debes completar los campos.</p>
+    <p>Selecciona un icono:</p>
+
+    <table>
+        <tr>
+        <td id="td1"><img src="img/chico.png" alt="Chico" id="chico" width = "80px" height = "80px"></td>
+        <td id="td2"><img src="img/chica.png" alt="Chica" id="chica" width = "80px" height = "80px"></td>
+        <td id="td3"><img src="img/ovni.png" alt="Ovni" id="chico" width = "80px" height = "80px"></td>
+        </tr>
+        <tr>
+        <td id="td4">
+            <input type="radio" name="icono" value="option-chico" id="op-chico"><label for="opcion-chico"></label>
+        </td>
+        <td id="td5">
+            <input type="radio" id="icono" name="icono" value="opcion-chica" id="op-chica"><label for="opcion-chica"></label>
+        </td>
+        <td id="td5">
+            <input type="radio" id="icono" name="icono" value="option-ovni" id="op-ovni"><label for="opcion-ovni"></label>
+        </td>
+        </tr>
+       
+    </table>
+    <br>
+    Alias: <input type="text" name="dato" id="dato" size="25" value="texto" class="xXx"/>
+    <hr/>
+
+    <table>
+        <tr>
+        <td id="td1">Nombre</td>
+        <td id="td2">
+            <input type="text" name="nombre" id="nombre"/>
+        </td>
+        </tr>
+        <tr>
+        <td id="td3">Dirección</td>
+        <td id="td4">
+            <input type="text" name="direccion" id="direccion"/>
+        </td>
+        </tr>
+        <tr>
+  
+        <tr>
+        <td id="td5">Email</td>
+        <td id="td6">
+            <input type="email" name="email" id="email"/>
+        </td>
+        </tr>
+        <td id="td7">Teléfono</td>
+        <td id="td8">
+            <input type="number" name="telefono" id="telefono"/>
+        </td>
+        </tr>
+        </table>
+    </form>
+
+    <hr/>
+
+    <form>
+        <h3>Magia</h3>
+        <input type="radio" name="group1" value="opcion1" id="opcion1-1">
+        <label for="opcion1-1">Nivel 1</label>
+        <input type="radio" name="group1" value="opcion2" id="opcion1-2">
+        <label for="opcion1-2">Nivel 2</label>
+        <input type="radio" name="group1" value="opcion2" id="opcion1-2">
+        <label for="opcion1-2">Nivel 3</label>
+        <input type="radio" name="group1" value="opcion2" id="opcion1-2">
+        <label for="opcion1-2">Nivel 4</label>
+
+        <h3 color="blue">Regeneración</h3>
+        <input type="radio" name="group2" value="opcion3" id="opcion2-1">
+        <label for="opcion2-1">Principiante</label>
+        <input type="radio" name="group2" value="opcion4" id="opcion2-2">
+        <label for="opcion2-2">Medio</label>
+        <input type="radio" name="group1" value="opcion2" id="opcion1-2">
+        <label for="opcion1-2">Avanzado</label>
+        <input type="radio" name="group1" value="opcion2" id="opcion1-2">
+        <label for="opcion1-2">Experto</label>
+
+    </form>
+
+    <hr/>
+
+    <p>A continuación elije tus habiliades:</p>
+    <input type="checkbox" id="checkbox1" name="checkbox1" value="option1">
+    <label for="checkbox1">Agilidad</label><br>
+    <input type="checkbox" id="checkbox2" name="checkbox2" value="option2">
+    <label for="checkbox2">Resistencia</label><br>
+    <input type="checkbox" id="checkbox3" name="checkbox3" value="option3">
+    <label for="checkbox3">Rapidez</label><br>
+    <input type="checkbox" id="checkbox4" name="checkbox4" value="option4">
+    <label for="checkbox4">Encanto</label><br>
+    <input type="checkbox" id="checkbox5" name="checkbox5" value="option5">
+    <label for="checkbox5">Piedad</label><br>
+    
+    <hr/>
+
+    <label for="miSelect">Selecciona tu planeta:</label>
+        <select id="miSelect" name="miSelect">
+            <option value="opcion1">Nebulon</option>
+            <option value="opcion2">Pulsario</option>
+            <option value="opcion3">Xandar</option>
+            <option value="opcion4">Aeloria</option>
+            <option value="opcion5">Lunaris</option>
+        </select>
+    <hr/>
+    <label for="miTextarea">Escribe tu comentario:</label><br>
+    <textarea id="miTextarea" name="miTextarea" rows="5" cols="50"></textarea>
+
+</body>
+</html>

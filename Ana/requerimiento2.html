@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Requerimiento 2</title>
+
+    <style>
+        .pizzas {
+            border-collapse: collapse;
+            width: 50%;
+            text-align: center;   
+        }   
+    </style>
+
+</head>
+
+<body>
+
+    <table>
+        <tr>
+            <td><img src="img/moto.png" alt="moto" id="moto" width = "90px" height = "50px"></td>
+            <td><h1>Peccati Pizzeria </h1></td>
+        </tr>
+    </table>
+
+    <form id="miFormulario">
+    <h3>Realizar pedido</h3>
+    <p>Datos peronales:</p>
+    <hr/>
+        <table class="registro">
+            <tr>
+                <td><label for="nombre">Nombre:</label></td>
+                <td><input type="text" id="nombre" name="nombre" required></td>
+            </tr>
+            <tr>
+                <td><label for="telefono">Teléfono:</label></td>
+                <td><input type="text" id="telefono" name="telefono" required></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email:</label></td>
+                <td><input type="email" id="email" name="email" required></td>
+            </tr>
+        </table>
+
+        <p>Dirección:</p>
+        <hr/>
+        <table class="direccion">
+            <tr>
+                <td><label for="direccion">Dirección:</label></td>
+                <td><input type="text" id="direccion" name="direccion" required></td>
+            </tr>
+            <tr>
+                <td><label for="ciudad">Ciudad:</label></td>
+                <td><input type="text" id="ciudad" name="ciudad" required></td>
+            </tr>
+            <tr>
+                <td><label for="cpostal">Código postal:</label></td>
+                <td><input type="text" id="cpostal" name="cpostal" required></td>
+            </tr>
+        </table>
+
+        <hr/>
+
+        <label><h3>Tamaño pizza</h3></label><br>
+        <table class="pizzas">
+            <tr>
+                <td><img src="img/pizza.png" alt="pizza S" id="s" width = "55px" height = "55px"></td>
+                <td><img src="img/pizza.png" alt="pizza M" id="m" width = "80px" height = "80px"></td>
+                <td><img src="img/pizza.png" alt="pizza L" id="l" width = "100px" height = "100px"></td>
+            </tr>
+            <tr>
+                <td><h4>5 €</h4></td>
+                <td><h4>10 €</h4></td>
+                <td><h4>15 €</h4></td>
+            </tr>
+            <tr>
+                <td><input type="radio" id="tamañoPizzaPequeña" name="tamañoPizza" value="5">Pequeña</td>
+                <td><input type="radio" id="tamañoPizzaMediana" name="tamañoPizza" value="10">Mediana</td>
+                <td><input type="radio" id="tamañoPizzaGrande" name="tamañoPizza" value="15">Grande</td>
+            </tr>
+        </table>
+        
+        <hr/>
+
+        <label><h3>Añade extras</h3></label>
+        <p>Elige al menos uno de tus favoritos</p>
+        <input type="checkbox" id="extra1" name="extras" value="1"> Anchoas (1€)<br>
+        <input type="checkbox" id="extra2" name="extras" value="1"> Pepperoni (1€)<br>
+        <input type="checkbox" id="extra3" name="extras" value="1"> Champiñones (1€)<br>
+        <input type="checkbox" id="extra4" name="extras" value="1"> Aceitunas (1€)<br><br>
+
+        <input type="submit" value="Realizar pedido">
+    </form>
+
+    <div id="resultado"></div>
+</body>
+
+<script>
+    const formulario = document.getElementById('miFormulario');
+    const resultadoDiv = document.getElementById('resultado');
+
+    formulario.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        // validamos que todos los campos del formulario estén completos
+        const nombre = document.getElementById('nombre').value;
+        const telefono = document.getElementById('telefono').value;
+        const email = document.getElementById('email').value;
+        const direccion = document.getElementById('direccion').value;
+        const ciudad = document.getElementById('ciudad').value;
+        const cpostal = document.getElementById('cpostal').value;
+        
+        // validamos que se haya seleccionado un tamaño de pizza
+        const tamañoPizza = document.querySelector('input[name="tamañoPizza"]:checked');
+
+        // validamos que se hayan seleccionado los extrsa
+        const extras = document.querySelectorAll('input[name="extras"]:checked');
+
+        if (nombre.trim() === '' || direccion.trim() === '' || telefono.trim() === '' ||
+         !tamañoPizza || extras.length < 1 || extras.length > 4) {
+            alert('Por favor, complete todos los campos obligatorios.');
+            // detiene el envío del formulario si no están completados los campos
+        } else {
+            const tamañoPizzaValue = parseFloat(tamañoPizza.value); 
+            // calculamos el valor de la pizza
+            const extrasCost = extras.length; 
+            // calculamos el valor de todos los extras
+            const totalCost = tamañoPizzaValue + extrasCost; 
+            // realizamos la suma de ambos para calcular el coste total
+
+            
+            alert('PEDIDO REALIZADO' )
+            resultadoDiv.innerHTML = `IMPORTE TOTAL: ${totalCost} €`;
+            // mostramos el importe total del pedido
+        }
+    });
+    
+</script>
+</html>
+

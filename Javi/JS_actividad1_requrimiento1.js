@@ -258,12 +258,12 @@ function cargarFormulario() {
     // Añadimos el label al formulario
     var label19 = document.createElement('label')
     label19.setAttribute('for','opciones')
-    var textlabel9 = document.createTextNode('Elige una opcion :   ')
-    label19.appendChild(textlabel9)
         
     var select1 = document.createElement('select')
     select1.id = 'opciones'
     select1.name = 'opciones'
+
+    formulario.appendChild(label19)
     
     var opciones1 = document.createElement('option')
     opciones1.value = 'Metalico'
@@ -289,8 +289,9 @@ function cargarFormulario() {
     select1.appendChild(opciones2)
     select1.appendChild(opciones3)
     select1.appendChild(opciones4)
-    formulario.appendChild(label19)
     formulario.appendChild(select1)
+
+
 
     var titulo4 = document.createElement('h3')
     var textTitulo4 =document.createTextNode('Observaciones :')
